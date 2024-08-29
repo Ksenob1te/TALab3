@@ -1,7 +1,7 @@
+import builtins
 import logging
-import math
-import sys
 from src.classes.storage import *
+from src.classes.function import Function
 from src.methods import methods
 
 from bison import BisonParser
@@ -33,7 +33,7 @@ class CommitedOperation:
                 result_args.append(arg)
         new_kwargs = {}
         for key, value in self.kwargs.items():
-            if callable(value):
+            if callable(value) and value != FunctionType:
                 new_kwargs[key] = value()
             else:
                 new_kwargs[key] = value
@@ -56,7 +56,7 @@ class Parser(BisonParser):
     # lexer tokens - these must match those in your lex script (below)
     # ----------------------------------------------------------------
     tokens = [
-        'START', 'FINISH', 'WHILE', 'INSTEAD', 'BREAK', 'CHECKZERO',
+        'START', 'FINISH', 'WHILE', 'INSTEAD', 'BREAK', 'CHECKZERO', 'CALL', 'WITH', 'COMMA', 'RETURN',
         'NUMBER', 'STR',
         'INTEGER', 'STRING', 'POINTER', 'ARRAY', 'MUTABLE',
         'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'MOD', 'SEM', "REF", 'APPEND',
@@ -75,6 +75,7 @@ class Parser(BisonParser):
         ('left', ('OP_EQUAL', 'OP_GREATER', 'OP_LESS')),
         ('left', ('MINUS', 'PLUS')),
         ('left', ('TIMES', 'DIVIDE', 'MOD')),
+        ('right', ('LBRACKET', 'RBRACKET'))
     )
 
     # --------------------------------------------
@@ -88,29 +89,94 @@ class Parser(BisonParser):
             if isinstance(v, Exception):
                 raise v
 
-    start = "main"
+    start = "global_thread"
 
-    # TODO: break
-
-    def on_function(self, target, option, names, values):
+    def on_global_thread(self, target, option, names, values):
         """
-        function :
+        global_thread :
+                      | global_thread function_init
         """
-        print("HELP")
-        print(global_storage)
-        return False
-
-    def on_main(self, target, option, names, values):
-        """
-        main :
-             | main operation
-        """
+        self.check_exceptions(values)
+        print(target, option, names, values)
         if option != 0:
             if values[0] is not False:
                 return values[0] + [values[1]]
             return [values[1]]
         else:
             return False
+
+    def on_function_init(self, target, option, names, values):
+        """
+        function_init : var_type IDENTIFIER LPAREN func_params RPAREN group
+        """
+        print(target, option, names, values)
+        kwargs = {
+            "name": values[1],
+            "type": FunctionType,
+            "value": values[5],
+            "value_type": values[0],
+            "parameters": values[3]
+        }
+        return CommitedOperation(init_variable, **kwargs)
+
+    def on_func_params(self, target, option, names, values):
+        """
+        func_params :
+                    | var_type IDENTIFIER
+                    | func_params COMMA var_type IDENTIFIER
+        """
+        print(target, option, names, values)
+        transform_dict = {"string": String, "integer": Integer, "pointer": Pointer, "array of": Array}
+        if option == 0:
+            return []
+        elif option == 2:
+            return values[0] + [(values[3], transform_dict[values[2]])]
+        elif option == 1:
+            return [(values[1], transform_dict[values[0]])]
+
+    def on_group(self, target, option, names, values):
+        """
+        group : START set FINISH SEM
+        """
+        print(target, option, names, values)
+        return values[1]
+
+    def on_set(self, target, option, names, values):
+        """
+        set :
+            | set operation
+        """
+        print(target, option, names, values)
+        self.check_exceptions(values)
+        if option == 1:
+            if values[0] is not False:
+                return values[0] + [values[1]]
+            return [values[1]]
+        else:
+            return False
+
+    def on_operation(self, target, option, names, values):
+        """
+        operation : command
+                  | while
+                  | checkzero
+                  | function_init
+        """
+        self.check_exceptions(values)
+        print(target, option, names, values)
+        return values[0]
+
+    # def on_main(self, target, option, names, values):
+    #     """
+    #     main :
+    #          | main operation
+    #     """
+    #     if option != 0:
+    #         if values[0] is not False:
+    #             return values[0] + [values[1]]
+    #         return [values[1]]
+    #     else:
+    #         return False
 
     def on_checkzero(self, target, option, names, values):
         """
@@ -119,6 +185,7 @@ class Parser(BisonParser):
                   | CHECKZERO parenexp group instead
                   | CHECKZERO parenexp operation instead
         """
+        print(target, option, names, values)
         self.check_exceptions(values)
         if option == 0:
             return CommitedOperation(methods._if, values[1], values[2])
@@ -137,6 +204,7 @@ class Parser(BisonParser):
               | WHILE parenexp group instead
               | WHILE parenexp operation instead
         """
+        print(target, option, names, values)
         self.check_exceptions(values)
         if option == 0:
             return CommitedOperation(methods._while, values[1], values[2])
@@ -153,40 +221,11 @@ class Parser(BisonParser):
         instead : INSTEAD group
                 | INSTEAD operation
         """
+        print(target, option, names, values)
         if option == 0:
             return values[1]
         else:
             return [values[1]]
-
-
-    def on_group(self, target, option, names, values):
-        """
-        group : START set FINISH SEM
-        """
-        return values[1]
-
-    def on_set(self, target, option, names, values):
-        """
-        set :
-            | set operation
-        """
-        self.check_exceptions(values)
-        if option == 1:
-            if values[0] is not False:
-                return values[0] + [values[1]]
-            return [values[1]]
-        else:
-            return False
-
-    def on_operation(self, target, option, names, values):
-        """
-        operation : command
-                  | while
-                  | checkzero
-        """
-        self.check_exceptions(values)
-        print(target, option, names, values)
-        return values[0]
 
 
     def on_command(self, target, option, names, values):
@@ -196,13 +235,21 @@ class Parser(BisonParser):
                 | array_assign SEM
                 | deref_assign SEM
                 | var_append SEM
+                | return SEM
                 | BREAK SEM
         """
-        if option == 5:
+        if option == 6:
             return CommitedOperation(Break)
         print(target, option, names, values)
         self.check_exceptions(values)
         return values[0]
+
+    def on_return(self, target, option, names, values):
+        """
+        return : RETURN exp
+        """
+        print(target, option, names, values)
+        return CommitedOperation(Result, values[1])
 
     def on_var_init(self, target, option, names, values):
         """
@@ -235,6 +282,7 @@ class Parser(BisonParser):
         str_or_int : INTEGER
                    | STRING
         """
+        print(target, option, names, values)
         return values[0]
 
     def on_pointer_init(self, target, option, names, values):
@@ -272,6 +320,7 @@ class Parser(BisonParser):
         is_mutable :
                    | MUTABLE
         """
+        print(target, option, names, values)
         return option == 1
 
     def on_array_init(self, target, option, names, values):
@@ -280,6 +329,7 @@ class Parser(BisonParser):
                    | MUTABLE ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
                    | ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
         """
+        print(target, option, names, values)
         if option == 0:
             return CommitedOperation(init_variable, type=values[1], name=values[3], is_static=True, value_type=values[2])
         elif option == 1:
@@ -308,6 +358,7 @@ class Parser(BisonParser):
                      | array_el EQUALS deref_assign
         """
         self.check_exceptions(values)
+        print(target, option, names, values)
         return CommitedOperation(methods._setattr, values[0], "value", values[2])
 
     def on_deref_assign(self, target, option, names, values):
@@ -318,6 +369,7 @@ class Parser(BisonParser):
                      | TIMES IDENTIFIER EQUALS deref_assign
         """
         self.check_exceptions(values)
+        print(target, option, names, values)
         ref = CommitedOperation(lambda name: global_storage[name], values[1])
         deref = CommitedOperation(methods._dereference, ref, True)
         return CommitedOperation(methods._setattr, deref, "value", values[3])
@@ -325,8 +377,7 @@ class Parser(BisonParser):
 
     def on_var_type(self, target, option, names, values):
         """
-        VAR_TYPE : INTEGER
-                 | STRING
+        var_type : str_or_int
                  | POINTER
                  | ARRAY
         """
@@ -337,6 +388,7 @@ class Parser(BisonParser):
         type_exp : INTEGER | STRING | POINTER | ARRAY | exp
         """
         name_list = ["integer", "string", "pointer", "array of"]
+        print(target, option, names, values)
         current = values[0]
         if callable(current):
             current = current()
@@ -349,6 +401,7 @@ class Parser(BisonParser):
         var_append : IDENTIFIER APPEND parenexp
         """
         self.check_exceptions(values)
+        print(target, option, names, values)
         current = CommitedOperation(lambda name: global_storage[name], values[0])
         return CommitedOperation(methods._append, current, values[2])
 
@@ -370,7 +423,9 @@ class Parser(BisonParser):
             | op_equal
             | op_greater
             | op_less
+            | function_call
         """
+        print(target, option, names, values)
         self.check_exceptions(values)
         return values[0]
 
@@ -473,6 +528,30 @@ class Parser(BisonParser):
         """
         return CommitedOperation(lambda a, b: a < b, values[0], values[2])
 
+    def on_function_call(self, target, option, names, values):
+        """
+        function_call : CALL IDENTIFIER
+                      | CALL IDENTIFIER WITH function_call_params
+        """
+        var = CommitedOperation(lambda name: global_storage[name], values[1])
+        if option == 1:
+            return CommitedOperation(methods._function_call, func_var=var, parameters=values[3])
+        else:
+            return CommitedOperation(methods._function_call, func_var=var, parameters=[])
+
+    def on_function_call_params(self, target, option, names, values):
+        """
+        function_call_params :
+                             | IDENTIFIER
+                             | function_call_params COMMA IDENTIFIER
+        """
+        if option == 0:
+            return []
+        elif option == 1:
+            return [CommitedOperation(lambda name: global_storage[name], values[0])]
+        else:
+            return values[0] + [CommitedOperation(lambda name: global_storage[name], values[2])]
+
     # -----------------------------------------
     # raw lex script, verbatim here
     # -----------------------------------------
@@ -498,13 +577,16 @@ if __name__ == '__main__':
 
     with open('./test.help', 'r') as content_file:
         content = content_file.read()
-    r = p.parse_string(content, debug=False)
+    r = p.parse_string(content, debug=True)
     print(r)
     if isinstance(r, Exception):
         raise r
     if r is False:
         raise ValueError("Error in parsing")
+    func_list = []
     for statement in r:
-        statement()
-    print(global_storage["abc"].value)
+        func_list.append(statement())
+
+    methods._function_call(func_list[1], parameters=[])
+    print(func_list)
     # print(global_storage["c"].value)

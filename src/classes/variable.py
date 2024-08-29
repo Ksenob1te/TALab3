@@ -4,7 +4,15 @@ from copy import copy
 
 class Break:
     def __call__(self, *args, **kwargs):
-        pass
+        return self
+
+class Result:
+    value: Type['Variable'] = None
+    def __init__(self, value):
+        self.value = value
+
+    def __call__(self, *args, **kwargs):
+        return self
 
 class Variable:
     _memory_index: int = 0
@@ -20,7 +28,10 @@ class Variable:
         self.memory_id = Variable._memory_index
         Variable._memory_index += 1
 
-    def __setattr__(self, key, value):
+    def __setattr__(self, key, value, skip_check: bool = False):
+        if skip_check:
+            super().__setattr__(key, value)
+            return self
         if key == "value":
             if value is not None and type(value) is not self.var_type:
                 raise ValueError(f"Value must be of type '{self.var_type}', not '{type(value)}'.")
@@ -347,6 +358,8 @@ class Array(Variable):
     def __setattr__(self, key, value):
         if key == "value":
             if value is not None and type(value) is type(self):
+                if value.value_type and self.value_type and value.value_type != self.value_type:
+                    raise ValueError(f"Array value must be of type '{self.value_type}', not '{value.value_type}'.")
                 self.is_static = value.is_static
                 self.current_size = value.current_size
                 self.value_type = value.value_type
@@ -359,6 +372,8 @@ class Array(Variable):
         return Integer(value=self.size_iden)
 
     def append(self, value: Type[Variable]):
+        if type(value) != self.value_type:
+            raise ValueError(f"Array value must be of type '{self.value_type}', not '{type(value)}'.")
         if self.current_size >= self.size_iden:
             if self.is_static:
                 raise RuntimeError(f"Cannot change size of static array '{self.name}'.")

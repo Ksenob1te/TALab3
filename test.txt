@@ -7,3 +7,36 @@ mutable pointer string op := &abc;
 c := "test " + *(op + 1);
 
 integer c := abc = abc;
+
+
+
+
+
+integer main()
+start
+    mutable integer a;
+    mutable integer a := 10;
+    integer a := 10;
+
+    a := 10 * (2 + 1);
+    integer b := a * 15;
+    integer res := call dosmth with a, b;
+    string c := "hello" + " world";
+    string d := "bye world";
+
+    pointer ptrc := &c;
+    pointer ptrd := &d;
+
+    array of pointer abc [0];
+    integer counter := 0;
+    while (counter < 10) start
+        checkzero (counter % 2)
+            abc.append(ptrc);
+        instead
+            abc.append(ptrd);
+        counter := counter + 1;
+    finish;
+
+    c := "STOP";
+    return 0;
+finish;

@@ -63,3 +63,37 @@ def _if(condition, body, instead = None):
                 if isinstance(break_check, Break):
                     return Break()
     return None
+
+def _function_call(func_var, parameters):
+    if callable(func_var):
+        func_var = func_var()
+    for i in range(len(parameters)):
+        if callable(parameters[i]):
+            parameters[i] = parameters[i]()
+    func_parameters = func_var.parameters
+    if len(parameters) != len(func_parameters):
+        raise ValueError(f"Function '{func_var.name}' expects {len(func_parameters)} parameters, got {len(parameters)}.")
+    for i in range(len(parameters)):
+        if type(parameters[i]) != func_parameters[i][1]:
+            raise ValueError(f"Function '{func_var.name}' expects parameter {i} to be of type {func_parameters[i]}, got {type(parameters[i])}.")
+
+    previous_view = global_storage.current_view_set.copy()
+    global_storage.add_view(func_var.name)
+    global_storage.current_view_set = func_var.view
+    if func_var.name in previous_view:
+        global_storage.add_view(func_var.name)
+    for i in range(len(parameters)):
+        new_var = copy(parameters[i])
+        new_var.name = func_parameters[i][0]
+        global_storage.add_variable(new_var)
+    return_value: Type[Variable] = None
+    for statement in func_var.value:
+        return_check = statement()
+        if isinstance(return_check, Result):
+            return_value = return_check.value
+            break
+    if return_value is not None:
+        return_value = copy(return_value)
+    global_storage.remove_view(func_var.name)
+    global_storage.current_view_set = previous_view
+    return return_value

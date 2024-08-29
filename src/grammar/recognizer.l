@@ -27,7 +27,6 @@ array array of
 
 {number} { flex_log("Parsed '%s' number\n", yytext); returntoken(NUMBER); }
 {assign} { flex_log("Parsed '%s' assign operator\n", yytext); returntoken(EQUALS); }
-{str} { flex_log("Parsed %s string\n", yytext); returntoken(STR); }
 "integer" { flex_log("Parsed '%s' var_type\n", yytext); returntoken(INTEGER); }
 "string" { flex_log("Parsed '%s' var_type\n", yytext); returntoken(STRING); }
 "pointer" { flex_log("Parsed '%s' var_type\n", yytext); returntoken(POINTER); }
@@ -55,6 +54,11 @@ array array of
 "instead" { flex_log("Parsed 'instead'\n"); returntoken(INSTEAD); }
 "break" { flex_log("Parsed 'break'\n"); returntoken(BREAK); }
 "checkzero" { flex_log("Parsed 'checkzero'\n"); returntoken(CHECKZERO); }
+"call" { flex_log("Parsed 'call'\n"); returntoken(CALL); }
+"with" { flex_log("Parsed 'with'\n"); returntoken(WITH); }
+"return" { flex_log("Parsed 'return'\n"); returntoken(RETURN); }
+","   { flex_log("Parsed ','\n"); returntoken(COMMA); }
+{str} { flex_log("Parsed %s string\n", yytext); returntoken(STR); }
 {identifier} { flex_log("Parsed '%s' identifier\n", yytext); returntoken(IDENTIFIER); }
 
 [ \t\v\f] {}
