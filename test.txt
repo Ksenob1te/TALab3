@@ -1,0 +1,9 @@
+abc.append(c);
+c.append("a");
+c := abc[0] := abc[1];
+mutable pointer string op := &abc;
+
+*op := "123";
+c := "test " + *(op + 1);
+
+integer c := abc = abc;

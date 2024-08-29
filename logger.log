@@ -1,0 +1,337 @@
+2024-08-28 16:43:13,331 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 16:43:13,716 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 16:43:14,098 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 16:43:14,157 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 16:43:14,157 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 16:43:14,158 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 17:29:54,965 ERROR b''
+2024-08-28 17:30:45,605 ERROR b''
+2024-08-28 17:32:01,730 ERROR b''
+2024-08-28 17:32:23,161 ERROR b''
+2024-08-28 17:33:07,575 ERROR b''
+2024-08-28 17:33:35,092 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 17:33:35,504 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 17:33:35,914 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 17:33:35,978 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 17:33:35,978 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 17:33:35,979 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 17:33:47,895 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 17:33:48,273 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 17:33:48,671 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 17:33:48,729 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 17:33:48,730 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 17:33:48,730 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 17:35:07,037 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 17:35:07,404 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 17:35:07,779 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 17:35:07,836 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 17:35:07,836 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 17:35:07,837 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 17:36:34,722 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 17:36:35,124 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 17:36:35,520 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 17:36:35,578 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 17:36:35,579 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 17:36:35,579 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 17:37:28,406 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 17:37:28,784 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 17:37:29,171 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 17:37:29,228 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 17:37:29,228 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 17:37:29,229 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 19:29:18,738 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 19:29:19,330 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 19:29:19,699 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 19:29:19,772 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 19:29:19,772 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 19:29:19,773 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 19:32:22,996 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 19:32:23,367 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 19:32:23,740 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 19:32:23,795 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 19:32:23,795 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 19:32:23,796 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 19:34:53,456 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 19:34:53,833 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 19:34:54,206 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 19:34:54,261 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 19:34:54,261 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 19:34:54,262 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 19:37:46,924 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 19:37:47,295 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 19:37:47,661 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 19:37:47,721 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 19:37:47,721 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 19:37:47,722 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 20:00:31,214 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 20:00:31,592 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 20:00:31,964 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 20:00:32,023 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 20:00:32,024 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 20:00:32,024 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 20:03:19,026 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 20:03:19,477 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 20:03:19,855 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 20:03:19,910 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 20:03:19,910 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 20:03:19,911 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 20:37:21,037 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 20:37:21,420 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 20:37:21,792 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 20:37:21,853 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 20:37:21,854 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 20:37:21,854 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 22:50:51,795 ERROR b''
+2024-08-28 22:51:29,738 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 22:51:30,120 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 22:51:30,491 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 22:51:30,551 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 22:51:30,552 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 22:51:30,552 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 22:57:46,850 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 22:57:47,241 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 22:57:47,610 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 22:57:47,668 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 22:57:47,668 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 22:57:47,669 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 22:59:10,907 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 22:59:11,298 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 22:59:11,683 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 22:59:11,744 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 22:59:11,745 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 22:59:11,745 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-28 23:00:53,788 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-28 23:00:54,175 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-28 23:00:54,536 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-28 23:00:54,590 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-28 23:00:54,591 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-28 23:00:54,591 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 00:04:21,724 ERROR b''
+2024-08-29 00:04:39,017 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:04:39,424 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:06:14,951 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:06:15,351 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:06:15,727 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 00:06:15,787 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 00:06:15,788 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 00:06:15,788 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 00:07:41,261 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:07:41,673 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:07:42,050 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 00:07:42,107 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 00:07:42,107 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 00:07:42,108 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 00:38:53,669 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:38:54,111 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:38:54,497 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 00:38:54,557 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 00:38:54,557 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 00:38:54,558 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 00:42:46,113 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:42:46,517 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:42:46,878 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 00:42:46,932 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 00:42:46,933 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 00:42:46,933 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 00:43:21,972 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 00:43:22,372 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 00:43:22,732 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 00:43:22,786 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 00:43:22,786 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 00:43:22,787 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 01:15:57,603 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 01:15:58,013 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 01:15:58,374 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 01:15:58,430 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 01:15:58,431 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 01:15:58,431 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 01:36:28,038 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 01:36:28,450 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 01:36:28,814 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 01:36:28,870 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 01:36:28,870 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 01:36:28,871 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 10:05:58,638 ERROR b''
+2024-08-29 10:06:18,106 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 10:06:18,772 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 10:06:19,141 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 10:06:19,219 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 10:06:19,220 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 10:06:19,220 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:08:46,760 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:08:47,174 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:08:47,535 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:08:47,592 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:08:47,592 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:08:47,593 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:09:38,651 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:09:39,050 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:09:39,408 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:09:39,463 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:09:39,464 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:09:39,464 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:11:56,564 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:11:57,015 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:11:57,421 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:11:57,483 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:11:57,483 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:11:57,484 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:22:30,769 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:22:31,176 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:22:31,537 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:22:31,591 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:22:31,591 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:22:31,592 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:32:47,039 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:32:47,461 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:32:47,840 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:32:47,900 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:32:47,900 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:32:47,901 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:39:31,658 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:39:32,095 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:39:32,481 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:39:32,538 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:39:32,539 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:39:32,539 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:43:02,509 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:43:02,917 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:43:03,286 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:43:03,340 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:43:03,340 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:43:03,341 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 11:53:34,040 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 11:53:34,493 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 11:53:34,878 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 11:53:34,936 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 11:53:34,937 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 11:53:34,937 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:01:33,108 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:01:33,572 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:01:33,959 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:01:34,017 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:01:34,018 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:01:34,018 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:18:33,518 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:18:33,958 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:18:34,327 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:18:34,382 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:18:34,382 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:18:34,383 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:23:43,204 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:23:43,643 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:23:44,034 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:23:44,092 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:23:44,092 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:23:44,093 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:29:47,119 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:29:47,548 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:29:47,930 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:29:47,985 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:29:47,985 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:29:47,986 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:33:07,167 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:33:07,598 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:33:07,970 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:33:08,024 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:33:08,024 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:33:08,025 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:33:18,574 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:33:18,998 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:33:19,366 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:33:19,419 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:33:19,420 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:33:19,420 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:36:40,246 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:36:40,672 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:36:41,040 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:36:41,094 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:36:41,094 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:36:41,095 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:37:14,955 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:37:15,379 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:37:15,746 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:37:15,802 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:37:15,802 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:37:15,803 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:38:09,389 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:38:09,817 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:38:10,186 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:38:10,240 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:38:10,240 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:38:10,241 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:39:29,586 ERROR b''
+2024-08-29 12:39:34,518 ERROR b''
+2024-08-29 12:39:54,893 ERROR b''
+2024-08-29 12:40:35,177 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:40:35,609 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:40:35,982 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:40:36,037 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:40:36,037 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:40:36,038 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 12:58:22,007 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 12:58:22,466 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 12:58:22,869 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 12:58:22,927 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 12:58:22,928 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 12:58:22,928 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 13:44:02,311 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 13:44:02,785 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 13:44:03,187 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 13:44:03,246 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 13:44:03,247 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 13:44:03,247 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 14:18:46,074 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 14:18:46,550 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 14:18:46,955 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 14:18:47,015 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 14:18:47,015 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 14:18:47,016 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 14:57:59,481 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 14:57:59,957 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 14:58:00,353 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 14:58:00,411 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 14:58:00,412 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 14:58:00,412 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 15:49:21,279 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 15:49:21,804 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 15:49:22,234 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 15:49:22,295 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 15:49:22,295 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 15:49:22,296 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 15:52:37,156 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 15:52:37,638 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 15:52:38,055 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 15:52:38,114 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 15:52:38,114 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 15:52:38,115 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 15:56:37,393 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 15:56:37,888 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 15:56:38,292 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 15:56:38,351 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 15:56:38,351 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 15:56:38,352 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 15:58:32,376 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 15:58:32,855 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 15:58:33,252 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 15:58:33,309 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 15:58:33,309 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 15:58:33,310 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 16:58:45,141 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 16:58:45,663 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 16:58:46,069 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 16:58:46,132 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 16:58:46,132 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 16:58:46,133 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 17:18:11,243 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 17:18:11,723 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 17:18:12,113 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 17:18:12,169 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 17:18:12,169 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 17:18:12,170 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c
+2024-08-29 18:20:57,736 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c tmp.tab.c -o tmp.tab.o -O3 -g
+2024-08-29 18:20:58,255 INFO cc -fPIC -D__declspec(x) -I/usr/include/python3.8 -c lex.yy.c -o lex.yy.o -O3 -g
+2024-08-29 18:20:58,656 INFO cc -shared tmp.tab.o lex.yy.o -o /tmp/pybison/pybison_Parser/calc1-engine.cpython-38-x86_64-linux-gnu.so
+2024-08-29 18:20:58,717 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.c
+2024-08-29 18:20:58,717 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/tmp.tab.h
+2024-08-29 18:20:58,718 WARNING failed to delete temporary file /tmp/pybison/pybison_Parser/lex.yy.c

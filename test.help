@@ -1,0 +1,24 @@
+mutable integer a;
+mutable integer a := 10;
+integer a := 10;
+
+a := 10 * (2 + 1);
+integer b := a * 15;
+string c := "hello" + " world";
+string d := "bye world";
+
+pointer ptrc := &c;
+pointer ptrd := &d;
+
+array of pointer abc [0];
+integer counter := 0;
+while (counter < 10) start
+    checkzero (counter % 2)
+        abc.append(ptrc);
+    instead
+        abc.append(ptrd);
+    counter := counter + 1;
+finish;
+break;
+
+c := "STOP";
