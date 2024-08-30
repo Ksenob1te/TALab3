@@ -87,8 +87,6 @@ def _function_call(func_var, parameters):
     previous_view = global_storage.current_view_set.copy()
     global_storage.add_view(func_var.name)
     global_storage.current_view_set = func_var.view
-    if func_var.name in previous_view:
-        global_storage.add_view(func_var.name)
     for i in range(len(parameters)):
         new_var = copy(parameters[i])
         new_var.name = func_parameters[i][0]

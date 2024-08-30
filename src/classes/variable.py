@@ -338,7 +338,6 @@ class Pointer(Variable):
             return Integer(value=0)
 
 
-
 class Array(Variable):
     value: Union[List[Type[Variable]], None] = None
     var_type = list

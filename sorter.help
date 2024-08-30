@@ -1,0 +1,51 @@
+integer sort(array of massiv)
+start
+    integer n := ?massiv;
+    integer gap := n / 2;
+    mutable integer temp;
+    mutable integer i;
+    mutable integer j;
+    while (gap > 0)
+    start
+        i := gap;
+        while (i < n)
+        start
+            temp := massiv[i];
+            j := i;
+            while (((j > gap) + (j = gap)))
+            start
+                checkzero((massiv[j - gap] > temp) - 1)
+                start
+                    massiv[j] := massiv[j - gap];
+                    j := j - gap;
+                    break;
+                finish;
+                instead break;
+            finish;
+            massiv[j] := temp;
+            i := i + 1;
+        finish;
+        gap := gap / 2;
+    finish;
+    return 0;
+finish;
+
+
+array of main()
+start
+    array of integer massiv[10];
+    massiv[0] := 9;
+    massiv[1] := 1;
+    massiv[2] := 8;
+    massiv[3] := 0;
+    massiv[4] := 11;
+    massiv[5] := 0-14;
+    massiv[6] := 567;
+    massiv[7] := 931;
+    massiv[8] := 0-31;
+    massiv[9] := 27578;
+
+    call sort with massiv;
+
+    return massiv;
+finish;

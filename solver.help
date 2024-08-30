@@ -93,8 +93,5 @@ start
             finish;
         finish;
     finish;
-
-
-
     return 1;
 finish;

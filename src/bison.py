@@ -384,13 +384,13 @@ class Parser(BisonParser):
 
     def on_array_init(self, target, option, names, values):
         """
-        array_init : MUTABLE ARRAY type_exp IDENTIFIER
+        array_init : ARRAY type_exp IDENTIFIER
                    | MUTABLE ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
                    | ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
         """
         logging.info(f"{target}, {option}, {names}, {values}")
         if option == 0:
-            return CommitedOperation(init_variable, type=values[1], name=values[3], is_static=True, value_type=values[2])
+            return CommitedOperation(init_variable, type=values[0], name=values[2], is_static=False, value_type=values[1])
         elif option == 1:
             return CommitedOperation(init_variable, type=values[1], name=values[3], is_static=True, value_type=values[2], size=values[5])
         else:
@@ -648,7 +648,7 @@ def compile_script(filename: str):
 
     with open(f'./{filename}', 'r') as content_file:
         content = content_file.read()
-    compiled_program = p.parse_string(content, debug=False)
+    compiled_program = p.parse_string(content, debug=True)
     if isinstance(compiled_program, Exception):
         raise compiled_program
     if compiled_program is False:

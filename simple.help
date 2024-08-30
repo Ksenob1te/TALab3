@@ -1,0 +1,5 @@
+integer main()
+start
+    integer var := 0;
+    return 0;
+finish;

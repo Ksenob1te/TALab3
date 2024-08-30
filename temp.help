@@ -1,11 +1,23 @@
 
-                integer main()
+                integer test(integer n)
                 start
-                    mutable array of integer numf[2];
-                    numf[0] := 10;
-                    numf[1] := 20;
-                    mutable pointer a := &numf;
-                    mutable pointer string b := a + 1;
-                    return *b;
+                    integer numf := 0;
+                    integer nums := 1;
+                    integer nextnumber := nums;
+                    integer counter := 0;
+                    mutable integer temp;
+                    while (counter < n) start
+                        counter := counter + 1;
+                        temp := nums;
+                        nums := nextnumber;
+                        numf := temp;
+                        nextnumber := numf + nums;
+                    finish;
+                    return nums;
+                finish;
+
+                integer main(integer n)
+                start
+                    return call test with n;
                 finish;
                 

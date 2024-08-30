@@ -24,7 +24,8 @@ class Storage:
         all_vars = self.name_storage.get(tuple(self.view_set), {}).values()
         for var in all_vars:
             del self.memory_storage[var.memory_id]
-        del self.name_storage[tuple(self.view_set)]
+        if tuple(self.view_set) in self.name_storage:
+            del self.name_storage[tuple(self.view_set)]
         if self.view_set[-1] != view:
             raise ValueError(f"View '{view}' is not the current view.")
         self.view_set.pop()
@@ -58,7 +59,7 @@ class Storage:
                 view_set_temp = self.view_set[:-1]
                 while len(view_set_temp) >= 0:
                     if len(view_set_temp) == 0 or view_set_temp[-1] in self.current_view_set:
-                        if item in self.name_storage[tuple(view_set_temp)]:
+                        if tuple(view_set_temp) in self.name_storage and item in self.name_storage[tuple(view_set_temp)]:
                             return self.name_storage[tuple(view_set_temp)][item]
                     if len(view_set_temp) == 0:
                         raise ValueError(f"Variable with name '{item}' does not exist.")
@@ -88,7 +89,7 @@ def _init_array(**kwargs) -> Array:
 
 
 def _init_function(**kwargs) -> Function:
-    return Function(name=kwargs.get("name", None), value=kwargs.get("value", None), return_type=kwargs.get("value_type", None), parameters=kwargs.get("parameters", None), view=global_storage.view_set.copy())
+    return Function(name=kwargs.get("name", None), value=kwargs.get("value", None), return_type=kwargs.get("value_type", None), parameters=kwargs.get("parameters", None), view=global_storage.current_view_set.copy())
 
 
 # builder/factory pattern

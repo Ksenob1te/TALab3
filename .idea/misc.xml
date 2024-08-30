@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.8 (TALab3)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8.5 WSL (Ubuntu-20.04): (/home/ivarys/.virtualenvs/TALab3/bin/python)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10.12 WSL (Ubuntu): (/home/ksenobite/.virtualenvs/TALab3/bin/python)" project-jdk-type="Python SDK" />
 </project>

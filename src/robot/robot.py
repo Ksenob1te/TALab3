@@ -1,5 +1,6 @@
 from typing import List, Tuple, Union, Dict
-
+import os
+import time
 class Robot:
     position: List[int] = [0, 0]
     imported_map: List[List[int]] = None
@@ -17,6 +18,17 @@ class Robot:
             self.position = list(map(int, f.readline().split()))
             self.imported_map = [[int(i) for i in line.split()] for line in f.readlines()]
 
+    def draw_map(self):
+        for i in range(len(self.imported_map)):
+            for j in range(len(self.imported_map[i])):
+                if self.position[0] == i and self.position[1] == j:
+                    print("R", end=" ")
+                elif self.imported_map[i][j] == 0:
+                    print("_", end=" ")
+                else:
+                    print("#", end=" ")
+            print()
+
     def set_pos(self, new_pos: Tuple[int, int]):
         x = new_pos[0]
         y = new_pos[1]
@@ -25,6 +37,9 @@ class Robot:
         self.path_log.append(new_pos)
         print(f"Robot has moved to position ({x}, {y}).")
         if self.imported_map[x][y] == 0:
+            os.system('clear')
+            self.draw_map()
+            time.sleep(0.2)
             if x == 0 or x == len(self.imported_map) - 1 or y == 0 or y == len(self.imported_map[0]) - 1:
                 print(f"Robot has reached the exit at position ({x}, {y}).\nPath: {self.path_log}")
                 exit(0)
