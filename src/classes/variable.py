@@ -35,7 +35,7 @@ class Variable:
         if key == "value":
             if value is not None and type(value) is not self.var_type:
                 raise ValueError(f"Value must be of type '{self.var_type}', not '{type(value)}'.")
-        if self.is_const and key is "value":
+        if self.is_const and key == "value":
             raise ValueError(f"Cannot modify constant variable '{self.name}'.")
         bison_log(f"set: {self.name} {key} = {value}")
         super().__setattr__(key, value)
@@ -102,6 +102,9 @@ class String(Variable):
         super().__init__(name)
         self.value = value
 
+    def __str__(self):
+        return self.value
+
     def __getitem__(self, item):
         if type(item) is Integer:
             item = item.value
@@ -118,6 +121,8 @@ class String(Variable):
         return result_int
 
     def __setattr__(self, key, value):
+        if self.is_const and key == "value":
+            raise ValueError(f"Cannot modify constant variable '{self.name}'.")
         if key == "value":
             if value is not None and type(value) is type(self):
                 self.is_const = value.is_const
@@ -140,6 +145,8 @@ class Integer(Variable):
         self.value = value
 
     def __setattr__(self, key, value):
+        if self.is_const and key == "value":
+            raise ValueError(f"Cannot modify constant variable '{self.name}'.")
         if key == "value":
             if value is not None and type(value) is type(self):
                 self.is_const = value.is_const
@@ -226,6 +233,10 @@ class Pointer(Variable):
         self.var_type = Pointer.Link
         super().__init__(name)
         if value is not None:
+            if value_type is not None:
+                if isinstance(value, Pointer):
+                    if type(value.value.value) is not None and type(value.value.value) != value_type:
+                        raise ValueError(f"Pointer value type must be of type '{value_type}', not '{value.value.value_type}'.")
             self.value = value
         else:
             self.value = Pointer.Link(value_type=value_type, is_const=is_value_const)
@@ -260,6 +271,8 @@ class Pointer(Variable):
         return self.value.value
 
     def __setattr__(self, key, value):
+        if self.is_const and key == "value":
+            raise ValueError(f"Cannot modify constant variable '{self.name}'.")
         if key == "value":
             if value is not None and type(value) is type(self):
                 self.is_const = value.is_const
@@ -356,6 +369,8 @@ class Array(Variable):
         return self.value[item]
 
     def __setattr__(self, key, value):
+        if self.is_const and key == "value":
+            raise ValueError(f"Cannot modify constant variable '{self.name}'.")
         if key == "value":
             if value is not None and type(value) is type(self):
                 if value.value_type and self.value_type and value.value_type != self.value_type:

@@ -1,0 +1,11 @@
+
+                integer main()
+                start
+                    mutable array of integer numf[2];
+                    numf[0] := 10;
+                    numf[1] := 20;
+                    mutable pointer a := &numf;
+                    mutable pointer string b := a + 1;
+                    return *b;
+                finish;
+                
