@@ -97,7 +97,7 @@ class Parser(BisonParser):
                       | global_thread function_init
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         if option != 0:
             if values[0] is not False:
                 return values[0] + [values[1]]
@@ -111,7 +111,7 @@ class Parser(BisonParser):
                       | POINTER IDENTIFIER LPAREN func_params RPAREN group
                       | ARRAY IDENTIFIER LPAREN func_params RPAREN group
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         kwargs = {
             "name": values[1],
             "type": FunctionType,
@@ -127,7 +127,7 @@ class Parser(BisonParser):
                     | var_type IDENTIFIER
                     | func_params COMMA var_type IDENTIFIER
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         transform_dict = {"string": String, "integer": Integer, "pointer": Pointer, "array of": Array}
         if option == 0:
             return []
@@ -140,7 +140,7 @@ class Parser(BisonParser):
         """
         group : START set FINISH SEM
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         return values[1]
 
     def on_set(self, target, option, names, values):
@@ -148,7 +148,7 @@ class Parser(BisonParser):
         set :
             | set operation
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         self.check_exceptions(values)
         if option == 1:
             if values[0] is not False:
@@ -165,7 +165,7 @@ class Parser(BisonParser):
                   | function_init
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         return values[0]
 
     # def on_main(self, target, option, names, values):
@@ -187,7 +187,7 @@ class Parser(BisonParser):
                   | CHECKZERO paren group instead
                   | CHECKZERO paren operation instead
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         self.check_exceptions(values)
         if option == 0:
             return CommitedOperation(methods._if, values[1], values[2])
@@ -206,7 +206,7 @@ class Parser(BisonParser):
               | WHILE paren group instead
               | WHILE paren operation instead
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         self.check_exceptions(values)
         if option == 0:
             return CommitedOperation(methods._while, values[1], values[2])
@@ -223,7 +223,7 @@ class Parser(BisonParser):
         instead : INSTEAD group
                 | INSTEAD operation
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         if option == 0:
             return values[1]
         else:
@@ -247,7 +247,7 @@ class Parser(BisonParser):
                 | RIGHT SEM
                 | function_call SEM
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         if option == 6:
             return CommitedOperation(Break)
         elif option == 7:
@@ -270,7 +270,7 @@ class Parser(BisonParser):
         """
         return : RETURN exp
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         return CommitedOperation(Result, values[1])
 
     def on_var_init(self, target, option, names, values):
@@ -279,7 +279,7 @@ class Parser(BisonParser):
                  | pointer_init
                  | array_init
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         self.check_exceptions(values)
         return values[0]
 
@@ -290,7 +290,7 @@ class Parser(BisonParser):
                      | MUTABLE str_or_int IDENTIFIER EQUALS exp
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
 
         if option == 0:
             return CommitedOperation(init_variable, type=values[1], name=values[2])
@@ -304,7 +304,7 @@ class Parser(BisonParser):
         str_or_int : INTEGER
                    | STRING
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         return values[0]
 
     def on_pointer_init(self, target, option, names, values):
@@ -388,7 +388,7 @@ class Parser(BisonParser):
                    | MUTABLE ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
                    | ARRAY type_exp IDENTIFIER LBRACKET exp RBRACKET
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         if option == 0:
             return CommitedOperation(init_variable, type=values[1], name=values[3], is_static=True, value_type=values[2])
         elif option == 1:
@@ -405,7 +405,7 @@ class Parser(BisonParser):
                    | IDENTIFIER EQUALS deref_assign
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         cur = CommitedOperation(lambda name: global_storage[name], values[0])
         return CommitedOperation(methods._setattr, cur, "value", values[2])
 
@@ -417,7 +417,7 @@ class Parser(BisonParser):
                      | array_el EQUALS deref_assign
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         return CommitedOperation(methods._setattr, values[0], "value", values[2])
 
     def on_deref_assign(self, target, option, names, values):
@@ -428,7 +428,7 @@ class Parser(BisonParser):
                      | TIMES IDENTIFIER EQUALS deref_assign
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         ref = CommitedOperation(lambda name: global_storage[name], values[1])
         deref = CommitedOperation(methods._dereference, ref, True)
         return CommitedOperation(methods._setattr, deref, "value", values[3])
@@ -447,7 +447,7 @@ class Parser(BisonParser):
         type_exp : INTEGER | STRING | POINTER | ARRAY | exp
         """
         name_list = ["integer", "string", "pointer", "array of"]
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         current = values[0]
         if callable(current):
             current = current()
@@ -460,7 +460,7 @@ class Parser(BisonParser):
         var_append : IDENTIFIER APPEND paren
         """
         self.check_exceptions(values)
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         current = CommitedOperation(lambda name: global_storage[name], values[0])
         return CommitedOperation(methods._append, current, values[2])
 
@@ -488,7 +488,7 @@ class Parser(BisonParser):
             | LEFT
             | RIGHT
         """
-        print(target, option, names, values)
+        logging.info(f"{target}, {option}, {names}, {values}")
         if option == 17:
             return CommitedOperation(lambda: methods._top)
         elif option == 18:
@@ -630,3 +630,38 @@ class Parser(BisonParser):
     with open("./src/grammar/recognizer.l", "r") as lexer:
         lex_read = lexer.read()
     lexscript = lex_read
+
+
+def compile_script(filename: str):
+    import argparse
+
+    parser = argparse.ArgumentParser(prog="PyBison")
+    parser.add_argument("-k", "--keepfiles", action="store_true",
+                        help="Keep temporary files used in building parse engine lib")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="Enable verbose messages while parser is running")
+    parser.add_argument("-d", "--debug", action="store_true",
+                        help="Enable garrulous debug messages from parser engine")
+    args = parser.parse_args()
+
+    p = Parser(keepfiles=args.keepfiles, verbose=args.verbose)
+
+    with open(f'./{filename}', 'r') as content_file:
+        content = content_file.read()
+    compiled_program = p.parse_string(content, debug=False)
+    if isinstance(compiled_program, Exception):
+        raise compiled_program
+    if compiled_program is False:
+        raise RuntimeError("Error in parsing")
+    func_list = []
+    for statement in compiled_program:
+        func_list.append(statement())
+
+    main_func = None
+    for func in func_list:
+        if func.name == "main":
+            main_func = func
+            break
+    if main_func is None:
+        raise RuntimeError("No main function found")
+    return main_func

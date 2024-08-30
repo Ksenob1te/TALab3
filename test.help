@@ -1,6 +1,6 @@
 integer dosmth(integer a, integer b)
 start
-    integer c := a + b;
+    integer с := a + b;
     integer getd()
     start
         return c + a;
@@ -15,7 +15,7 @@ start
     integer a := 10;
 
     a := 10 * (2 + 1);
-    integer b := a * 15;
+    integer b := a * 2 + 10;
     integer res := call dosmth with a, b;
     string c := "hello" + " world";
     string d := "bye world";
@@ -36,6 +36,6 @@ start
     finish;
 
     c := "STOP";
-    return 0;
+    return b;
 finish;
 

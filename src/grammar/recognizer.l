@@ -68,7 +68,7 @@ array array of
 {identifier} { flex_log("Parsed '%s' identifier\n", yytext); returntoken(IDENTIFIER); }
 
 [ \t\v\f] {}
-.      { printf("unknown char %c ignored, yytext=0x%lx\n", yytext[0], yytext); /* ignore bad chars */}
+.      { flex_log("unknown char %c ignored, yytext=0x%lx\n", yytext[0], yytext); /* ignore bad chars */}
 
 %%
 
