@@ -42,6 +42,7 @@ class Storage:
 
     def __getitem__(self, item: Union[int, str]) -> Type[Variable]:
         view_set = tuple(self.view_set)
+        self.name_storage[view_set] = self.name_storage.get(view_set, {})
         if callable(item):
             item = item()
         if type(item) is Integer:

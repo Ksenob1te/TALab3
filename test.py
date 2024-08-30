@@ -12,7 +12,7 @@ def foo():
 
 
 
-print([][-1])
+print([1, 2, 3, 4][-4])
 # c = "helloworld"
 # counter = 0
 # while counter < 10:

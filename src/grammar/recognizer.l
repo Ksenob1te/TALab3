@@ -58,6 +58,12 @@ array array of
 "with" { flex_log("Parsed 'with'\n"); returntoken(WITH); }
 "return" { flex_log("Parsed 'return'\n"); returntoken(RETURN); }
 ","   { flex_log("Parsed ','\n"); returntoken(COMMA); }
+"top" { flex_log("Parsed 'top'\n"); returntoken(TOP); }
+"bottom" { flex_log("Parsed 'bottom'\n"); returntoken(BOTTOM); }
+"left" { flex_log("Parsed 'left'\n"); returntoken(LEFT); }
+"right" { flex_log("Parsed 'right'\n"); returntoken(RIGHT); }
+"timeshift" { flex_log("Parsed 'timeshift'\n"); returntoken(TIMESHIFT); }
+"bind" { flex_log("Parsed 'bind'\n"); returntoken(BIND); }
 {str} { flex_log("Parsed %s string\n", yytext); returntoken(STR); }
 {identifier} { flex_log("Parsed '%s' identifier\n", yytext); returntoken(IDENTIFIER); }
 

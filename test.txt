@@ -27,6 +27,7 @@ start
     pointer ptrc := &c;
     pointer ptrd := &d;
 
+
     array of pointer abc [0];
     integer counter := 0;
     while (counter < 10) start

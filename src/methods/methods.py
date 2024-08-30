@@ -1,4 +1,5 @@
 from ..classes import *
+from ..robot import global_robot
 
 def _setattr(target, name, value):
     if callable(target):
@@ -43,6 +44,8 @@ def _while(condition, body, instead = None):
             break_check = statement()
             if isinstance(break_check, Break):
                 return
+            if isinstance(break_check, Result):
+                return break_check
     if not was_iterated and instead is not None:
         for statement in instead:
             statement()
@@ -56,12 +59,16 @@ def _if(condition, body, instead = None):
             break_check = statement()
             if isinstance(break_check, Break):
                 return Break()
+            if isinstance(break_check, Result):
+                return break_check
     else:
         if instead is not None:
             for statement in instead:
                 break_check = statement()
                 if isinstance(break_check, Break):
                     return Break()
+                if isinstance(break_check, Result):
+                    return break_check
     return None
 
 def _function_call(func_var, parameters):
@@ -97,3 +104,30 @@ def _function_call(func_var, parameters):
     global_storage.remove_view(func_var.name)
     global_storage.current_view_set = previous_view
     return return_value
+
+def _top():
+    return Integer(value=global_robot.move_top())
+
+def _bottom():
+    return Integer(value=global_robot.move_down())
+
+def _left():
+    return Integer(value=global_robot.move_left())
+
+def _right():
+    return Integer(value=global_robot.move_right())
+
+def _bind(key):
+    if callable(key):
+        key = key()
+    if type(key) != String:
+        raise ValueError(f"Key must be of type String, not {type(key)}.")
+    global_robot.bind(key.value)
+
+def _timeshift(value):
+    if callable(value):
+        value = value()
+    if type(value) != Integer and type(value) != String:
+        raise ValueError(f"Value must be of type Integer or String, not {type(value)}.")
+    value = value.value
+    return global_robot.timeshift(value)

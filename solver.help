@@ -1,0 +1,100 @@
+integer check(integer direction)
+start
+    integer status := 0;
+    checkzero(direction)
+    start
+        status := top;
+        checkzero(status - 1)
+            bottom;
+    finish;
+    instead checkzero(direction-1)
+    start
+        status := right;
+        checkzero(status - 1)
+            left;
+    finish;
+    instead checkzero(direction-2)
+    start
+        status := bottom;
+        checkzero(status - 1)
+            top;
+    finish;
+    instead start
+        status := left;
+        checkzero(status - 1)
+            right;
+    finish;
+    return status;
+finish;
+
+integer go(integer direction)
+start
+    checkzero(direction)
+        top;
+    instead checkzero(direction-1)
+        right;
+    instead checkzero(direction-2)
+        bottom;
+    instead
+        left;
+finish;
+
+integer isInArray(array of arr, integer value)
+start
+    integer currentId := 0;
+    while (currentId < ?arr) start
+        checkzero ((arr[currentId] = value) - 1)
+            return 1;
+        currentId := currentId + 1;
+    finish;
+    return 0;
+finish;
+
+
+integer main ()
+start
+    array of integer arr[5];
+    integer counter := 0;
+    while (counter < ?arr) start
+        arr[counter] := counter;
+        counter := counter + 1;
+    finish;
+
+    integer wantToGo := 3;
+    integer willGo := 0;
+    while (1) start
+        checkzero((call check with wantToGo) - 1)
+        start
+            call go with wantToGo;
+            checkzero(wantToGo)
+                wantToGo := 4;
+            wantToGo := wantToGo - 1;
+        finish;
+        instead start
+            willGo := wantToGo + 1;
+            checkzero((willGo) - 4)
+                willGo := 0;
+            checkzero((call check with willGo) - 1)
+                call go with willGo;
+            instead start
+                wantToGo := willGo;
+                willGo := willGo + 1;
+                checkzero((willGo) - 4)
+                    willGo := 0;
+                checkzero((call check with willGo) - 1)
+                    call go with willGo;
+                instead start
+                    wantToGo := willGo;
+                    willGo := willGo + 1;
+                    checkzero((willGo) - 4)
+                        willGo := 0;
+                    call go with willGo;
+                finish;
+            finish;
+        finish;
+    finish;
+
+
+
+    return 1;
+finish;
